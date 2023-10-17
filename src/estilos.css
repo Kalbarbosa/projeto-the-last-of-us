@@ -1,0 +1,123 @@
+/* Defina os estilos básicos do corpo da página */
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+/* Estilize o plano de fundo com uma gradiente */
+main::after {
+    content: '';
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, rgba(0, 0, 0, 1) 90%);
+    
+    z-index: -1;
+}
+
+.conteudo {  
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-evenly;
+}
+
+.informacoes .logo {
+    max-width: 350px; 
+    filter: invert(1);
+    margin-bottom: 80px; 
+}
+
+
+
+.informacoes .descricao {
+    max-width: 49%;
+    font-size: 24px; 
+    color: #ffffff;
+    line-height: 30px; 
+}
+
+.botoes-carrossel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.botoes-carrossel .botao {
+    background-color: #ffffff; 
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-color: #fff;
+}
+
+/* Estilize o botão selecionado */
+.botoes-carrossel .botao.selecionado {
+    background-color: #1d8346;
+}
+
+/* Estilize o menu lateral */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+/* Estilize a lista não ordenada no menu lateral */
+.menu-lateral ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-lateral .icone {
+    width: 30px;
+    filter: invert(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animação ao passar o mouse sobre os ícones */
+.menu-lateral .icone:hover {
+    transform: scale(1.2);
+}
+
+/* Estilize o carrossel */
+.carrossel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: -1;
+}
+
+.carrossel .imagem {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    animation: mudarImagem 0.7s;
+}
+
+.carrossel .imagem.ativa {
+    display: block;
+}
+
+@keyframes mudarImagem {
+    from {
+        opacity: 0.85;
+    }
+    to {
+        opacity: 1;
+    }
+}
